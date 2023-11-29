@@ -13,7 +13,7 @@ jobs:
       with:
         github-token: ${{ secrets.REPO_TOKEN }}
         script: |
-          const response = await octokit.request('POST /repos/:owner/:repo/dispatches', {
+          const response = await github.repos.createDispatchEvent({
             owner: 'tmtsmrsl',
             repo: 'test_repo_1',
             event_type: 'hello'
