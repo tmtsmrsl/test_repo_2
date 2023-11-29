@@ -1,0 +1,15 @@
+name: Trigger Hello World
+
+on:
+  workflow_dispatch: # Triggered manually
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger Hello World
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.REPO_B_TOKEN }}
+        event-type: hello
